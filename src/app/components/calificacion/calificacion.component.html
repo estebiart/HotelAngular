@@ -1,0 +1,37 @@
+<div class="col-md-12 ">
+    <div class="card">
+        <div class="card-body">
+            
+            <form>
+                <label>Calificacion</label>
+                <br>
+                <mat-radio-group aria-label="Select an option"  name="puntaje"  [(ngModel)]="calificacion.puntaje">
+                    <mat-radio-button value="1">1 Estrella </mat-radio-button>
+                    <mat-radio-button value="2">2 Estrellas </mat-radio-button>
+                    <mat-radio-button value="3">3 Estrellas </mat-radio-button>
+                    <mat-radio-button value="4">4 Estrellas </mat-radio-button>
+                    <mat-radio-button value="5">5 Estrellas </mat-radio-button>
+                  </mat-radio-group>
+                  <br>
+                  <hr>
+                <div class="form-group">
+                    <label> Comentario </label>
+                    <input type="text" name="comentarios" [(ngModel)]="calificacion.comentarios" placeholder="Nombre del hotel" class="form-control" autofocus>
+                </div>
+                <button class="btn btn-success btn-block" (click)="NewCalificacion()"> Enviar</button>
+            </form>
+        
+        </div>
+    </div>
+
+
+    <div class="card card-body text-center">
+        <div class="card col-md-4" style="width: 18rem;" *ngFor=" let calificacion of calificacions">
+        <h3> Comentarios</h3>
+
+     <h3> {{calificacion.puntaje}}</h3>
+     <h3> {{calificacion.comentarios}} </h3>
+    </div>
+    </div>
+</div>
+

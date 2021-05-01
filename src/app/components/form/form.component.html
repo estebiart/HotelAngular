@@ -1,0 +1,38 @@
+<div class="col-md-6 offset-md-1">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label> Nombre </label>
+                    <input type="text" name="HotelName" [(ngModel)]="hotel.HotelName" placeholder="Nombre del hotel" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <label> Precio Noche </label>
+                    <input type="number" name="Precio" [(ngModel)]="hotel.Precio"placeholder="Precio" class="form-control" >
+                </div>
+      
+                <label>Estrellas</label>
+                <br>
+                <mat-radio-group aria-label="Select an option"  name="CategoriaDescripcion"  [(ngModel)]="hotel.CategoriaDescripcion">
+                    <mat-radio-button value="1">1 Estrella </mat-radio-button>
+                    <mat-radio-button value="2">2 Estrellas </mat-radio-button>
+                    <mat-radio-button value="3">3 Estrellas </mat-radio-button>
+                    <mat-radio-button value="4">4 Estrellas </mat-radio-button>
+                    <mat-radio-button value="5">5 Estrellas </mat-radio-button>
+                  </mat-radio-group>
+                  <br>
+                  <hr>
+                <button class="btn btn-success btn-block" (click)=" edit ? updateHotel() : NewHotel()"> Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <h3> {{hotel.id_hotel}}</h3>
+        <app-foto></app-foto>
+     <h3> Nombre: {{hotel.HotelName}}</h3>
+     <h3> Precio:{{hotel.Precio}} </h3>
+    </div>
+</div>
+
